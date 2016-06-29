@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Udacity assignment: portfolio mock-up",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stefan Stefansen",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.7",
+    "gulp-copy": "0.0.2",
+    "gulp-image-resize": "^0.8.0",
+    "gulp-watch": "^4.3.5",
+    "gulp-webserver": "^0.9.1"
+  },
+  "dependencies": {
+    "gulp-minify-html": "^1.0.6",
+    "gulp-rename": "^1.2.2"
+  }
+}
