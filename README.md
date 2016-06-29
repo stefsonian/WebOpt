@@ -1,3 +1,21 @@
+## Note from student
+This submission works straight out of the box - no need to run gulp first.
+
+To view the first part of the assignement:
+1. Clone repo
+2. Open **index.html**
+
+To view the second part:
+1. Navigate to the 'views' folder
+2. Open **pizza.html**
+
+I used gulp to optimise the html, css and images.
+However I did so without using dev and dist folders.
+
+
+---------------
+# Original readme content follows:
+
 ## Website Performance Optimization portfolio project
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
