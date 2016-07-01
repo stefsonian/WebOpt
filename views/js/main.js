@@ -426,7 +426,7 @@ var resizePizzas = function(size) {
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
   function determineDx (elem, size) {
     var oldWidth = elem.offsetWidth;
-    var windowWidth = document.querySelector("#randomPizzas").offsetWidth;
+    var windowWidth = document.getElementById("randomPizzas").offsetWidth;
     var oldSize = oldWidth / windowWidth;
 
     // Changes the slider value to a percent width
@@ -459,17 +459,9 @@ var resizePizzas = function(size) {
     for (var i = 0; i < pizzaContainers.length; i++) {
       //var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
       //var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      pizzaContainers[i].style.width = newPizzaWidth;
+      pizzaContainers[i].style.width = newPizzaWidth; // changed
     }
   }
-
-  // function changePizzaSizes(size) {
-  //   for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-  //     var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-  //     var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-  //     document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
-  //   }
-  // }
 
   changePizzaSizes(size);
 
@@ -520,7 +512,7 @@ function updatePositions() {
   // of the loop as they only need to be calculated once.
   // Further slight optimisation is possible by moving modal operant calc too.
   var phaseBase = document.body.scrollTop / 1250; //changed
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName('mover');
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin(phaseBase + (i % 5)); // changed
     //var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
@@ -542,9 +534,9 @@ window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
-  var cols = 4; //changed: 4 is enough (was 8)
+  var cols = 8;
   var s = 256;
-  for (var i = 0; i < 12; i++) { //changed: 12 is enough (was 200)
+  for (var i = 0; i < 40; i++) { //changed: 40 is enough (was 200)
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
@@ -552,7 +544,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    document.getElementById("movingPizzas1").appendChild(elem);
   }
   updatePositions();
 });
